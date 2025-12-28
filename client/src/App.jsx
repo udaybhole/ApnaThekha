@@ -65,10 +65,10 @@ function App() {
         if (activeCategory === 'Humble Recommends') {
           // 1. Fetch ALL data
           const [beers, vodka, rum, whisky] = await Promise.all([
-            fetch('http://localhost:8080/api/beers').then(res => res.json()),
-            fetch('http://localhost:8080/api/vodka').then(res => res.json()),
-            fetch('http://localhost:8080/api/rum').then(res => res.json()),
-            fetch('http://localhost:8080/api/whisky').then(res => res.json())
+            fetch('/api/beers').then(res => res.json()),
+            fetch('/api/vodka').then(res => res.json()),
+            fetch('/api/rum').then(res => res.json()),
+            fetch('/api/whisky').then(res => res.json())
           ]);
 
           const allDrinks = [...beers, ...vodka, ...rum, ...whisky];
@@ -86,10 +86,10 @@ function App() {
         } else {
           // Standard Fetch
           let url = '';
-          if (activeCategory === 'Beer') url = 'http://localhost:8080/api/beers';
-          else if (activeCategory === 'Vodka') url = 'http://localhost:8080/api/vodka';
-          else if (activeCategory === 'Rum') url = 'http://localhost:8080/api/rum';
-          else if (activeCategory === 'Whisky') url = 'http://localhost:8080/api/whisky';
+          if (activeCategory === 'Beer') url = '/api/beers';
+          else if (activeCategory === 'Vodka') url = '/api/vodka';
+          else if (activeCategory === 'Rum') url = '/api/rum';
+          else if (activeCategory === 'Whisky') url = '/api/whisky';
 
           if (url) {
             fetch(url).then(res => res.json()).then(data => setProducts(data));
