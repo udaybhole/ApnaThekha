@@ -28,19 +28,28 @@ function App() {
 
   // --- HUMBLE RECOMMENDS DATA ---
   const humblePicks = [
-    "Black Buck Premium Strong Beer", 
-    "London Pilsner Beer", 
+   "London Pilsner Beer",
     "Corona Extra",
-    "ICONiQ White", 
-    "Royal Challenge Play Beer Flavoured Whisky", 
+    "ICONiQ White",
+    "Royal Challenge Play Beer Flavoured Whisky",
     "Fireball Whiskey",
-    "Budweiser Magnum Double Barrel", 
-    "Magic Moment Verve Cranberry", 
+    "Budweiser Magnum Double Barrel",
+    "Magic Moment Verve Cranberry",
     "Short Story Grain Vodka",
-    "Absolut Vodka", 
-    "Bacardi Limon Citrus", 
+    "Absolut Vodka",
+    "Bacardi Limon Citrus",
     "Old Monk XXX Dark Rum",
-    "Bacardi Premium + Cranberry" 
+    "Bacardi Premium + Lemonade", 
+    "Bira Boom Can",
+    "Bira 91 Light Low Calorie Lager",
+    "Budweiser Strong Can",
+    "Kingfisher Ultra Max Can",
+    "Bro Code Strong Pint",
+    "Royal Green Whisky",
+    "Oaksmith International Whisky",
+    "Bacardi Black",
+    "Teachers Highland Cream",
+    "Jameson Triple Distilled" 
   ];
 
   const humbleDescriptions = {
