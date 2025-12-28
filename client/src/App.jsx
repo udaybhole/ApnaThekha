@@ -48,7 +48,6 @@ function App() {
     "Royal Green Whisky",
     "Oaksmith International Whisky",
     "Bacardi Black",
-    "Teachers Highland Cream",
     "Jameson Triple Distilled" 
   ];
 
@@ -73,7 +72,6 @@ function App() {
     "Royal Green Whisky": "Go to",
     "Oaksmith International Whisky": "Jalti h Bahut Gaale mei",
     "Bacardi Black": "Coke Kam Dalna",
-    "Teachers Highland Cream": "Neat Pinna",
     "Jameson Triple Distilled": "Hands Down Best"
   };
 
