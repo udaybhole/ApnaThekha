@@ -55,7 +55,7 @@ function App() {
     "Absolut Vodka": "Hands Down Best",
     "Bacardi Limon Citrus": "Maja Ayega",
     "Old Monk XXX Dark Rum": "Aram se Pinna",
-    "Bacardi Premium + Cranberry": "Chadhegi nahi",
+    "Bacardi Premium + Lemonade": "Chadhegi nahi",
     "Bira Boom Can": "Mast hai",
     "Bira 91 Light Low Calorie Lager": "Kabhi Kabhi Achi Lagegi",
     "Budweiser Strong Can": "Naam Hi Kafhi hai",
