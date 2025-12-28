@@ -1,1 +1,45 @@
 @import "tailwindcss";
+
+:root {
+  background-color: #000000;
+  color: white;
+  font-family: 'Inter', system-ui, sans-serif; /* Ensure a clean font */
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  /* The "Club" Base */
+  background-color: #020617; 
+}
+
+/* Custom Scrollbar (Neon Gold) */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #000000; }
+::-webkit-scrollbar-thumb { 
+  background: linear-gradient(to bottom, #ec4899, #eab308); 
+  border-radius: 10px; 
+}
+
+/* Animation for the background spotlights */
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+/* Neon Text Utilities */
+.text-neon-pink {
+  text-shadow: 0 0 10px rgba(236, 72, 153, 0.7), 0 0 20px rgba(236, 72, 153, 0.5);
+}
+
+.text-neon-gold {
+  text-shadow: 0 0 10px rgba(234, 179, 8, 0.7), 0 0 20px rgba(234, 179, 8, 0.5);
+}
+/* Pointer Cursors */
+button, a, select, [role="button"] { cursor: pointer !important; }
