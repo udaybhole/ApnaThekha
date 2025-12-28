@@ -17,7 +17,7 @@ if API_KEY:
     except Exception as e:
         print(f"Error initializing Gemini: {e}")
 
-model_name = 'gemini-2.0-flash' 
+model_name = 'gemini-2.5-flash' 
 
 # --- DATA PREPARATION ---
 def format_menu():
