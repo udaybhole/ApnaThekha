@@ -1,8 +1,14 @@
-# server/app.py
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+import sys
+import os
+
+# --- VERCEL PATH FIX (CRITICAL) ---
+# This forces Python to look in the 'api' folder for modules
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# Now imports will work
 from data import beers, vodka, rum, whisky
-# Import the chatbot function
 from chat import chatbot
 
 app = Flask(__name__)
@@ -24,7 +30,6 @@ def get_rum():
 def get_whisky():
     return jsonify(whisky)
 
-# --- NEW CHAT ENDPOINT ---
 @app.route('/api/chat', methods=['POST'])
 def chat_endpoint():
     data = request.json
@@ -39,4 +44,3 @@ def chat_endpoint():
         return jsonify({"response": bot_response})
     except Exception as e:
         return jsonify({"response": f"Sorry, the bartender is busy. (Error: {str(e)})"}), 500
-
