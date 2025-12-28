@@ -28,7 +28,7 @@ const ChatInterface = () => {
     setIsLoading(true);
 
     try {
-      const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+      const apiBase = '';
       const res = await fetch(`${apiBase}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

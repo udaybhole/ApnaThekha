@@ -40,5 +40,3 @@ def chat_endpoint():
     except Exception as e:
         return jsonify({"response": f"Sorry, the bartender is busy. (Error: {str(e)})"}), 500
 
-if __name__ == '__main__':
-    app.run(debug=True, port=8080)

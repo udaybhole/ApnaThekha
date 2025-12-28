@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import { Filter, ArrowDownUp, Beer, Wine, GlassWater, Martini, Sparkles, Star, Quote, ArrowRight, Barrel } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ChatInterface from './components/ChatInterface';
+const API_BASE = '';
 function App() {
   const [view, setView] = useState('home');
   const [activeCategory, setActiveCategory] = useState('Beer');
@@ -65,10 +66,10 @@ function App() {
         if (activeCategory === 'Humble Recommends') {
           // 1. Fetch ALL data
           const [beers, vodka, rum, whisky] = await Promise.all([
-            fetch('http://localhost:8080/api/beers').then(res => res.json()),
-            fetch('http://localhost:8080/api/vodka').then(res => res.json()),
-            fetch('http://localhost:8080/api/rum').then(res => res.json()),
-            fetch('http://localhost:8080/api/whisky').then(res => res.json())
+            fetch(`${API_BASE}/api/beers`).then(res => res.json()),
+            fetch(`${API_BASE}/api/vodka`).then(res => res.json()),
+            fetch(`${API_BASE}/api/rum`).then(res => res.json()),
+            fetch(`${API_BASE}/api/whisky`).then(res => res.json())
           ]);
 
           const allDrinks = [...beers, ...vodka, ...rum, ...whisky];
@@ -86,10 +87,10 @@ function App() {
         } else {
           // Standard Fetch
           let url = '';
-          if (activeCategory === 'Beer') url = 'http://localhost:8080/api/beers';
-          else if (activeCategory === 'Vodka') url = 'http://localhost:8080/api/vodka';
-          else if (activeCategory === 'Rum') url = 'http://localhost:8080/api/rum';
-          else if (activeCategory === 'Whisky') url = 'http://localhost:8080/api/whisky';
+          if (activeCategory === 'Beer') url = `${API_BASE}/api/beers`;
+          else if (activeCategory === 'Vodka') url = `${API_BASE}/api/vodka`;
+          else if (activeCategory === 'Rum') url = `${API_BASE}/api/rum`;
+          else if (activeCategory === 'Whisky') url = `${API_BASE}/api/whisky`;
 
           if (url) {
             fetch(url).then(res => res.json()).then(data => setProducts(data));
