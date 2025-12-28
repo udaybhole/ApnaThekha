@@ -205,7 +205,7 @@ function App() {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-80" />
                 
-                <div className="absolute bottom-0 left-0 p-6 z-10">
+                <div className="absolute top-0 left-0 p-6 z-10">
                   <div className="flex items-center gap-2 mb-2">
                     <Star className="text-amber-400 fill-amber-400 animate-pulse w-4 h-4" />
                     <span className="text-blue-400 font-bold tracking-[0.2em] text-[10px] uppercase">Curated Selection</span>
