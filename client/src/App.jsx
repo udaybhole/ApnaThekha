@@ -44,19 +44,28 @@ function App() {
   ];
 
   const humbleDescriptions = {
-    "Black Buck Premium Strong Beer": "Strong hit, smooth finish. Best for pre-gaming.",
-    "London Pilsner Beer": "Classic taste, easy on the pocket.",
-    "Corona Extra": "The beach vibe in a bottle. Needs a lime wedge.",
-    "ICONiQ White": "Surprisingly smooth whisky for the price.",
-    "Royal Challenge Play Beer Flavoured Whisky": "Unique fusion. If you can't decide between beer and whisky.",
-    "Fireball Whiskey": "Spicy cinnamon kick. Best taken as shots.",
-    "Budweiser Magnum Double Barrel": "Aged perfectly. Richer than your standard pint.",
-    "Magic Moment Verve Cranberry": "Sweet & tangy. Mixes great with soda.",
-    "Short Story Grain Vodka": "Clean, crisp, and no bad hangover.",
-    "Absolut Vodka": "The reliable classic. Goes with everything.",
-    "Bacardi Limon Citrus": "Zesty and refreshing. Summer party staple.",
-    "Old Monk XXX Dark Rum": "The legend. Coke's best friend.",
-    "Bacardi Premium + Cranberry": "Sweet entry, easy to drink all night."
+    "London Pilsner Beer": "Month End Wali",
+    "Corona Extra": "Nimbhu Dalke Peena",
+    "ICONiQ White": "Smooth Hai Bilkul",
+    "Royal Challenge Play Beer Flavoured Whisky": "Go 2 Cheez",
+    "Fireball Whiskey": "Pagal Ho Jaughe",
+    "Budweiser Magnum Double Barrel": "Pagal Ho Jaughe 2",
+    "Magic Moment Verve Cranberry": "Cocktail ya Neat",
+    "Short Story Grain Vodka": "Bottle Mast Hai",
+    "Absolut Vodka": "Hands Down Best",
+    "Bacardi Limon Citrus": "Maja Ayega",
+    "Old Monk XXX Dark Rum": "Aram se Pinna",
+    "Bacardi Premium + Cranberry": "Chadhegi nahi",
+    "Bira Boom Can": "Mast hai",
+    "Bira 91 Light Low Calorie Lager": "Kabhi Kabhi Achi Lagegi",
+    "Budweiser Strong Can": "Naam Hi Kafhi hai",
+    "Kingfisher Ultra Max Can": "Chilled Peena",
+    "Bro Code Strong Pint": "Mat Piyo Please",
+    "Royal Green Whisky": "Go to",
+    "Oaksmith International Whisky": "Jalti h Bahut Gaale mei",
+    "Bacardi Black": "Coke Kam Dalna",
+    "Teachers Highland Cream": "Neat Pinna",
+    "Jameson Triple Distilled": "Hands Down Best"
   };
 
   // --- FETCHING LOGIC ---
