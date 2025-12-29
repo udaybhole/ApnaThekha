@@ -17,7 +17,7 @@ if API_KEY:
     except Exception as e:
         print(f"Error initializing Gemini: {e}")
 
-model_name = 'gemma-3-1b' 
+model_name = 'gemma-3-12b' 
 
 # --- DATA PREPARATION ---
 def format_menu():
