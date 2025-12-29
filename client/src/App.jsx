@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import ChatInterface from "./components/ChatInterface";
-const API_BASE = "http://localhost:8000";
+const API_BASE = "";
 function App() {
   const [view, setView] = useState("home");
   const [activeCategory, setActiveCategory] = useState("Beer");
@@ -130,7 +130,7 @@ function App() {
       }
     };
     fetchRatings();
-    
+
     if (view === "products") {
       const interval = setInterval(fetchRatings, 2000);
       return () => clearInterval(interval);
@@ -201,8 +201,18 @@ function App() {
 
   const getProductRating = (item) => {
     const productKey = getProductKey(item);
-    const productRatings = ratings[productKey] || { '👍': 0, '👎': 0, '❤️': 0, '🔥': 0 };
-    return (productRatings['👍'] || 0) + (productRatings['❤️'] || 0) + (productRatings['🔥'] || 0) - (productRatings['👎'] || 0);
+    const productRatings = ratings[productKey] || {
+      "👍": 0,
+      "👎": 0,
+      "❤️": 0,
+      "🔥": 0,
+    };
+    return (
+      (productRatings["👍"] || 0) +
+      (productRatings["❤️"] || 0) +
+      (productRatings["🔥"] || 0) -
+      (productRatings["👎"] || 0)
+    );
   };
 
   const getProcessedProducts = () => {
@@ -222,13 +232,20 @@ function App() {
     if (activeCategory !== "Humble Recommends") {
       return filtered.sort((a, b) => {
         if (sortOrder === "lowToHigh" || sortOrder === "highToLow") {
-          const priceA = parseFloat(String(a.price).replace(/[^0-9.]/g, "")) || 0;
-          const priceB = parseFloat(String(b.price).replace(/[^0-9.]/g, "")) || 0;
+          const priceA =
+            parseFloat(String(a.price).replace(/[^0-9.]/g, "")) || 0;
+          const priceB =
+            parseFloat(String(b.price).replace(/[^0-9.]/g, "")) || 0;
           return sortOrder === "lowToHigh" ? priceA - priceB : priceB - priceA;
-        } else if (sortOrder === "ratingHighToLow" || sortOrder === "ratingLowToHigh") {
+        } else if (
+          sortOrder === "ratingHighToLow" ||
+          sortOrder === "ratingLowToHigh"
+        ) {
           const ratingA = getProductRating(a);
           const ratingB = getProductRating(b);
-          return sortOrder === "ratingHighToLow" ? ratingB - ratingA : ratingA - ratingB;
+          return sortOrder === "ratingHighToLow"
+            ? ratingB - ratingA
+            : ratingA - ratingB;
         }
         return 0;
       });
