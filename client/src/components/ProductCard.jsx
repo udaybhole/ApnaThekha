@@ -1,6 +1,56 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+
+const API_BASE = "http://localhost:8000";
 
 const ProductCard = ({ item, isHumble }) => {
+  const [ratings, setRatings] = useState({ '👍': 0, '👎': 0, '❤️': 0, '🔥': 0 });
+  
+  const getProductKey = () => {
+    return item.id ? String(item.id) : item.name;
+  };
+
+  useEffect(() => {
+    const fetchRatings = async () => {
+      try {
+        const response = await fetch(`${API_BASE}/api/ratings`);
+        const allRatings = await response.json();
+        const productKey = getProductKey();
+        if (allRatings[productKey]) {
+          setRatings(allRatings[productKey]);
+        } else {
+          setRatings({ '👍': 0, '👎': 0, '❤️': 0, '🔥': 0 });
+        }
+      } catch (error) {
+        console.error('Failed to fetch ratings:', error);
+      }
+    };
+    fetchRatings();
+  }, [item.id, item.name]);
+
+  const handleRatingClick = async (emoji) => {
+    try {
+      const productKey = getProductKey();
+      const response = await fetch(`${API_BASE}/api/ratings`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          productKey: productKey,
+          emoji: emoji,
+        }),
+      });
+      
+      if (response.ok) {
+        const updatedRatings = await response.json();
+        setRatings(updatedRatings);
+      }
+    } catch (error) {
+      console.error('Failed to update rating:', error);
+    }
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -49,6 +99,22 @@ const ProductCard = ({ item, isHumble }) => {
             </p>
           </div>
         )}
+
+        {/* Rating Section */}
+        <div className="mb-3 flex items-center gap-2">
+          {['👍', '👎', '❤️', '🔥'].map((emoji) => (
+            <button
+              key={emoji}
+              onClick={() => handleRatingClick(emoji)}
+              className="flex items-center gap-1 px-2 py-1 rounded-md bg-white/5 hover:bg-white/10 transition-all border border-white/10 hover:border-white/20 group"
+            >
+              <span className="text-sm">{emoji}</span>
+              <span className="text-[10px] font-bold text-slate-400 group-hover:text-white transition-colors">
+                {ratings[emoji] || 0}
+              </span>
+            </button>
+          ))}
+        </div>
 
         <div className="mt-auto pt-3 border-t border-white/5 flex items-center justify-between">
           <div className="flex flex-col">
